@@ -4,6 +4,7 @@
 %From altered synaptic plasticity to atypical learning: 
 %a computational model of Down syndrome. Cognition, 171, 15-24. 
 %https://doi.org/10.1016/j.cognition.2017.10.021
+%Please cite this work if you use this script
 
 %It uses Hebbian learning, and uses strenghtening and weakening of
 %connections to stabilize and limit weight values. Connection weights are
