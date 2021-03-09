@@ -1,5 +1,5 @@
-%Hebian learning wit LTP and LTD
-%Script used and described in 
+%Hebbian learning that incorporates LTP- and LTD-like weight adjustments. 
+%The algorithm was used and described in 
 %Tovar, A. E., Westermann, G., and Torres, A. (2018). 
 %From altered synaptic plasticity to atypical learning: 
 %a computational model of Down syndrome. Cognition, 171, 15-24. 
