@@ -14,11 +14,12 @@
 
 function [W , W_total_epochs] = hebb_ltd(A , epochs , sequence_training ,  beta ,  thres)
 
-%A = matrix os stimulation as trials(rows) and stimuli(columns) e.g., for AB, BC training [1 1 0;0 1 1]
+%A = Input matrix with trials(rows) and stimuli(columns) e.g., for AB, BC training A = [1 1 0;0 1 1]
 %epochs = number of epochs
 %sequence_training = 1 for random, 2 for sequencial
 %beta = learning rate
-%thres = threshold for LTP/LTD function
+%thres = threshold for LTP/LTD function. neurotypicals usually modeled with
+%0.6. Down syndrome modeled with 0.7 or higher
 
 [trials, neurons]= size(A);
 W = zeros(neurons);
@@ -32,7 +33,6 @@ for i = 1:epochs
         A = A;
     end
     
-
     for t = 1:trials
         %updating activations
         %first external activation (bottom up act)
@@ -53,13 +53,13 @@ for i = 1:epochs
         coactivation = (act_1 .*act_2);
 
         %learning
-        LamdaLTP = ((coactivation > thres) .* coactivation) - (W);
+        LambdaLTP = ((coactivation > thres) .* coactivation) - (W);
             for la=1:neurons
-                LamdaLTP(la,la)  = 0;
+                LambdaLTP(la,la)  = 0;
             end
                 
-        alpha_positiveP = (LamdaLTP>0).*(LamdaLTP.*(beta.*rand)); 
-        alpha_negativeP = (LamdaLTP<0).*(LamdaLTP.*(beta.*rand)); 
+        alpha_positiveP = (LambdaLTP>0).*(LambdaLTP.*(beta.*rand)); 
+        alpha_negativeP = (LambdaLTP<0).*(LambdaLTP.*(beta.*rand)); 
         alpha = alpha_positiveP  +  alpha_negativeP;    
 
         delta = (act_1.*act_2).*alpha;
