@@ -9,7 +9,8 @@ Please cite this work if you use this script
 It uses Hebbian learning, and uses strenghtening and weakening of
 connections to stabilize and limit weight values. Connection weights are
 modeled following notions of long term potentiation and long term depression
-more info and comments Angel Tovar aetovar@unam.mx ;
+more info and comments Angel E. Tovar-Romo, Universidad Nacional Autónoma de México (UNAM) 
+aetovar@unam.mx ;
 eugenio.tovar@gmail.com
 
 
