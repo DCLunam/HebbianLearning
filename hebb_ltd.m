@@ -3,14 +3,19 @@
 %Tovar, A. E., Westermann, G., and Torres, A. (2018). 
 %From altered synaptic plasticity to atypical learning: 
 %a computational model of Down syndrome. Cognition, 171, 15-24. 
-%https://doi.org/10.1016/j.cognition.2017.10.021
-%Please cite this work if you use this script
+% https://doi.org/10.1016/j.cognition.2017.10.021
+%And
+%Tovar, A. E. & Westermann, G. (2017) A Neurocomputational Approach
+%to Trained and Transitive Relations in Equivalence Classes.
+%Frontiers in Psychology. 8:1848.
+% https://doi.org/10.3389/fpsyg.2017.01848
+%Please cite thesse studies if you use this script
 
 %It uses Hebbian learning, and uses strenghtening and weakening of
 %connections to stabilize and limit weight values. Connection weights are
 %modeled following notions of long term potentiation and long term depression
 %more info and comments Angel Tovar aetovar@unam.mx ;
-%eugenio.tovar@gmail.com
+% eugenio.tovar@gmail.com
 
 function [W , W_total_epochs] = hebb_ltd(A , epochs , sequence_training ,  beta ,  thres)
 
@@ -22,7 +27,7 @@ function [W , W_total_epochs] = hebb_ltd(A , epochs , sequence_training ,  beta 
 %0.6. Down syndrome modeled with 0.7 or higher
 
 [trials, neurons]= size(A);
-W = zeros(neurons);
+W = zeros(neurons);%could also be initialized at low values (e.g., W = rand(neurons)*.1)
 beta = beta.*2;% this is needed to add noise and keep beta(mean) = beta input
     
 for i = 1:epochs
@@ -47,7 +52,7 @@ for i = 1:epochs
         final_act = ext_act + int_act_fin;
         final_act = ((final_act<1).*final_act)+(final_act>=1);%limiting act values to avoid surpassing 1
     
-        %Coactivations
+        %Coactivation matrix
         act_1 = repmat(final_act,neurons,1);
         act_2 = repmat(final_act',1,neurons);
         coactivation = (act_1 .*act_2);
@@ -55,16 +60,16 @@ for i = 1:epochs
         %learning
         LambdaLTP = ((coactivation > thres) .* coactivation) - (W);
             for la=1:neurons
-                LambdaLTP(la,la)  = 0;
+                LambdaLTP(la,la)  = 0;%sets diagonal to 0
             end
                 
         alpha_positiveP = (LambdaLTP>0).*(LambdaLTP.*(beta.*rand)); 
         alpha_negativeP = (LambdaLTP<0).*(LambdaLTP.*(beta.*rand)); 
         alpha = alpha_positiveP  +  alpha_negativeP;    
 
-        delta = (act_1.*act_2).*alpha;
-        W = W+delta;
-        W_total_epochs(:,:,i) = W;
+        delta = (act_1.*act_2).*alpha;%Hebbian learning
+        W = W+delta;%updating W
+        W_total_epochs(:,:,i) = W;%Saing all Ws
     end
 end
 
