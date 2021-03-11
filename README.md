@@ -12,7 +12,7 @@ Tovar, A. E. & Westermann, G. (2017) A Neurocomputational Approach to Trained an
 Please cite thesse studies if you use this script
 
 It uses strenghtening and weakening of connections to stabilize and limit weight values. Connection weights are
-modeled following notions of long term potentiation and long term depression more info and comments Angel E. Tovar-Romo, Universidad Nacional Autónoma de México (UNAM) 
+modeled following notions of long term potentiation and long term depression more info and comments Angel E. Tovar-y-Romo, Universidad Nacional Autónoma de México (UNAM) 
 aetovar@unam.mx ; eugenio.tovar@gmail.com
 
 
