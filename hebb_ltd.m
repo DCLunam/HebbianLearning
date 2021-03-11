@@ -51,7 +51,11 @@ for i = 1:epochs
        
         final_act = ext_act + int_act_fin;
         final_act = ((final_act<1).*final_act)+(final_act>=1);%limiting act values to avoid surpassing 1
-    
+        %Limiting activations in final_act can also be done through
+        %normalization, but it then requires adjusting the threshold parameter
+        %to very low values simulate typical (around .15) and 
+        %atypical learning (around .4)
+        
         %Coactivation matrix
         act_1 = repmat(final_act,neurons,1);
         act_2 = repmat(final_act',1,neurons);
