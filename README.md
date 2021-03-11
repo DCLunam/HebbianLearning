@@ -1,6 +1,6 @@
 # HebbianLerning
 Hebbian learning that incorporates LTP- and LTD-like weight adjustments.
-Its is a powerful alorithm to simulate performance in paradigms of associative learning, including statistical learning, 
+Its is a powerful algorithm to simulate performance in paradigms of associative learning, including statistical learning, 
 classical and operant conditioning, and prediction tasks.
 The algorithm was used and described in 
 Tovar, A. E., Westermann, G., and Torres, A. (2018). From altered synaptic plasticity to atypical learning: 
