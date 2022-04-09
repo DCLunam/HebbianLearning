@@ -16,7 +16,7 @@
 %Cognition, 171, 15-24. https://doi.org/10.1016/j.cognition.2017.10.021
 
 function [W] = TW_hebb_ltd(Matrix,beta,ltp_thres,epochs)
-%% Input Arguments
+%% Input Arguments %
 %Matrix - Input to the model. Must have object (syllables, words, visual objects, etc) codifications in columns for each time step in rows.
 %beta   - learning rate, usually 0.2
 %ltp_thres - Threshold for negative/positive (LTD/LTP) weight changes. usually between 0.6 and 0.7 for typical development. Adjust values if other activation functions are used 
