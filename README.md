@@ -1,7 +1,7 @@
 # HebbianLerning
 Hebbian learning that incorporates LTP- and LTD-like weight adjustments.
-Its is a powerful algorithm to simulate performance in paradigms of associative learning, including statistical learning, 
-classical and operant conditioning, and prediction tasks.
+Its is a learning algorithm to simulate performance in paradigms of associative learning, including statistical learning, 
+classical and operant conditioning, prediction tasks, etc.
 The algorithm was used and described in 
 Tovar, A. E., Westermann, G., and Torres, A. (2018). From altered synaptic plasticity to atypical learning: 
 a computational model of Down syndrome. Cognition, 171, 15-24. 
@@ -12,7 +12,6 @@ Tovar, A. E. & Westermann, G. (2017) A Neurocomputational Approach to Trained an
 Please cite thesse studies if you use this script
 
 It uses strenghtening and weakening of connections to stabilize and limit weight values. Connection weights are
-modeled following notions of long term potentiation and long term depression more info and comments Angel E. Tovar-y-Romo, Universidad Nacional Autónoma de México (UNAM) 
+modeled following notions of long term potentiation and long term depression.
+Angel E. Tovar-y-Romo, Universidad Nacional Autónoma de México (UNAM) 
 aetovar@unam.mx ; eugenio.tovar@gmail.com
-
-
